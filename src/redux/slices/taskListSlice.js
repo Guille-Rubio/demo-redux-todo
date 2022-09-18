@@ -11,7 +11,7 @@ const taskListSlice = createSlice({
     reducers: {
         addTask: (state, action) => {
             const newTask = {
-                date: new Date(),
+                date: new Date().toJSON(),
                 title: action.payload,
                 completed: false
             };

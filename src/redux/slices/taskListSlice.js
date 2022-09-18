@@ -10,21 +10,30 @@ const taskListSlice = createSlice({
     initialState,
     reducers: {
         addTask: (state, action) => {
-            return { ...state, tasks: [...state.tasks, action.payload] }
+            const newTask = {
+                date: new Date(),
+                title: action.payload,
+                completed: false
+            };
+            return { ...state, tasks: [...state.tasks, newTask] }
         },
         editTask: (state, action) => {
             const { index, updatedTask } = action.payload;
-
-            return { ...state, tasks: [...state.tasks.slice(0, index), updatedTask, ...state.tasks.slice(index + 1, state.tasks.length)] }
+            return { ...state, tasks: [...state.tasks.slice(0, index), { ...state.tasks[index], title: updatedTask }, ...state.tasks.slice(index + 1, state.tasks.length)] }
         },
         deleteTask: (state, action) => {
             return { ...state, tasks: state.tasks.filter((element, i) => i !== action.payload) }
         },
         deleteAllTasks: (state) => {
             return { ...state, tasks: [] }
-        }
+        },
+        toggleTaskCompleted: (state, action) => {
+            const { index, status } = action.payload;
+            return { ...state, tasks: [...state.tasks.slice(0, index), { ...state.tasks[index], completed: status }, ...state.tasks.slice(index + 1, state.tasks.length)] }
+        },
+
     }
 });
 
-export const { addTask, editTask, deleteTask, deleteAllTasks } = taskListSlice.actions;
+export const { addTask, editTask, deleteTask, deleteAllTasks, toggleTaskCompleted } = taskListSlice.actions;
 export default taskListSlice.reducer;

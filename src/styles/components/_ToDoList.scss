@@ -1,5 +1,12 @@
 @import '../utils/mixins.scss';
 
+
+.todolist{
+    @include centered-column-content;
+};
+
+
+
 .todolist__container {
     @include centered-column-content;
    /*  display: flex;

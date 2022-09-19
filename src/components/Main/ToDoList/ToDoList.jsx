@@ -22,7 +22,7 @@ const ToDoList = () => {
   const printCards = () => taskList.map((task, i) => <ToDoCard key={uuidv4()} data={task} delete={() => deleteCard(i)} index={i} />);
 
 
-  return <section>
+  return <section className="todolist">
     <h2>To do list</h2>
     <form>
       <input type="text" ref={newTaskInput}></input>

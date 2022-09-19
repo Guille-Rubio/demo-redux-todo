@@ -17,8 +17,8 @@ const ToDoList = () => {
     newTaskInput.current.value = "";
   };
 
-  const deleteCard = (i) => {dispatch(deleteTask(i))};
-  const deleteAllCards = () => { dispatch(deleteAllTasks())};
+  const deleteCard = (i) => { dispatch(deleteTask(i)) };
+  const deleteAllCards = () => { dispatch(deleteAllTasks()) };
   const printCards = () => taskList.map((task, i) => <ToDoCard key={uuidv4()} data={task} delete={() => deleteCard(i)} index={i} />);
 
 
@@ -29,10 +29,10 @@ const ToDoList = () => {
       <button className="button1" type="submit" onClick={addItem}>Add to list</button>
     </form>
     <section className="todolist__container">
-      <h3>Task List</h3>
+      {taskList.length > 0 ? <h3>Task List</h3> : ""}
       {printCards()}
     </section>
-    <button className="button1" onClick={deleteAllCards}>Delete List</button>
+    {taskList.length > 1 ? <button className="button1" onClick={deleteAllCards}>Delete List</button> : ""}
 
   </section>;
 };

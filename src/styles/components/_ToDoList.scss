@@ -1,6 +1,9 @@
+@import '../utils/mixins.scss';
+
 .todolist__container {
-    display: flex;
+    @include centered-column-content;
+   /*  display: flex;
     flex-direction: column;
     align-items: left;
-    margin:15px;
+    margin:15px; */
 }

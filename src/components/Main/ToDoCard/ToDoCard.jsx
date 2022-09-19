@@ -23,7 +23,8 @@ const ToDoCard = (props) => {
   };
 
   return <Draggable deltaY="10" grid={[50, 50]} scale={1} axis='y'>
-    <article className="todocard__card">
+    <article className="todocard">
+      <div className="todocard__element">Drag</div>
       <input type="checkbox" defaultChecked={completed} onClick={toggleCompletion} />
       <input type="text" value={taskInput} onChange={updateTask} onBlur={() => dispatch(editTask({ index: props.index, updatedTask: taskInput }))}></input>
       <button className="button1" onClick={props.delete}>X</button>

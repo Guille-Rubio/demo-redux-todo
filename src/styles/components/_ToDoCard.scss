@@ -1,14 +1,35 @@
-.todocard__card {
+@import '../utils/variables.scss';
+@import '../utils//mixins.scss';
+
+.todocard {
     display: flex;
     align-items: center;
     align-content: space-between;
     justify-content: space-between;
     height: auto;
     border: 1px solid black;
-    border-radius: 15px;;
+    border-radius: $border-radius-wide;
     margin: 10px;
-    padding: 15px;;
+    padding: 15px;
     max-width: 60%;
+
+    &__element {
+        @include centered-content;
+        height: 40px;
+        width: 40px;
+        border-color: green;
+        background-color: $innactive;
+    }
+
+    &>input[type=text] {
+        border:none;
+        outline: none;
+        
+        &:focus{
+            outline: none;
+            border-bottom:1px solid blue;
+            
+        }
+    }
+
 }
-
-

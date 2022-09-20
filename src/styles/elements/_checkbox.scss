@@ -1,0 +1,13 @@
+@import '../utils/mixins.scss';
+
+input[type=checkbox] {
+    appearance: none;
+    background-color: #f5f5f5;
+   
+
+    &:checked {
+        background-color: #47a868;
+    }
+
+
+}

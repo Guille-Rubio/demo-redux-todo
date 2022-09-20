@@ -1,16 +1,36 @@
 @import '../utils/mixins.scss';
+@import '../utils/variables.scss';
 
 
-.todolist{
+.todolist {
     @include centered-column-content;
-};
 
+    &>h2 {
+        font-size: 40px;
+        font-weight: 600;
+        color: #fdfdfe;
+        text-shadow: 0px 0px 5px #b393d3, 0px 0px 10px #b393d3, 0px 0px 10px #b393d3,
+            0px 0px 20px #b393d3;
+    }
 
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        &>input[type=text]{
+            min-width:200px;
+            width:30vh;
 
-.todolist__container {
-    @include centered-column-content;
-   /*  display: flex;
-    flex-direction: column;
-    align-items: left;
-    margin:15px; */
+        }
+    }
+
+    &__container {
+        @include centered-column-content;
+
+        /*  display: flex;
+        flex-direction: column;
+        align-items: left;
+        margin:15px; */
+    }
+
 }

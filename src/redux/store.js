@@ -6,4 +6,7 @@ export const store = configureStore({
     reducer:{
         taskList:taskListSlice
     }
-})
+}) 
+
+
+

@@ -24,8 +24,8 @@ const ToDoList = () => {
 
   return <section className="todolist">
     <h2>To do list</h2>
-    <form>
-      <input type="text" ref={newTaskInput}></input>
+    <form className="todolist__form">
+      <input type="text" ref={newTaskInput} placeholder="Add a new task"></input>
       <button className="button1" type="submit" onClick={addItem}>Add to list</button>
     </form>
     <section className="todolist__container">

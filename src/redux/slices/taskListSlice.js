@@ -1,6 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 
+
+
 const initialState = {
     tasks: [],
 };
@@ -13,8 +15,10 @@ const taskListSlice = createSlice({
             const newTask = {
                 date: new Date().toJSON(),
                 title: action.payload,
-                completed: false
+                completed: false,
+                position: state.tasks.length + 1
             };
+
             return { ...state, tasks: [...state.tasks, newTask] }
         },
         editTask: (state, action) => {

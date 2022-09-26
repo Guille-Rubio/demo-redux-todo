@@ -1,11 +1,10 @@
 @import '../utils//variables.scss';
+@import '../utils/mixins.scss';
 
 .App {
     text-align: center;
     font-family:$app-font-family;
     background-color: $dark-gray;
-    
-
   }
 
   
@@ -19,3 +18,5 @@
     font-size: calc(10px + 2vmin);
     color: white;
   }
+
+

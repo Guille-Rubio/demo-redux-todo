@@ -4,8 +4,9 @@
 
 .todolist {
     @include centered-column-content;
+    
 
-    &>h2 {
+    &>h2,h3 {
         font-size: 40px;
         font-weight: 600;
         color: #fdfdfe;
@@ -20,12 +21,12 @@
         &>input[type=text]{
             min-width:200px;
             width:30vh;
-
         }
     }
 
     &__container {
         @include centered-column-content;
+        border:2px solid aqua;
 
         /*  display: flex;
         flex-direction: column;

@@ -1,38 +1,80 @@
 @import '../utils/variables.scss';
 @import '../utils//mixins.scss';
 
-.todocard {
+
+%basic-card {
     @include shadow;
     display: flex;
     align-items: center;
     align-content: space-between;
     justify-content: space-between;
-    gap:5px;
+    gap: 5px;
     height: auto;
     border: 1px solid black;
     border-radius: $border-radius-wide;
     margin: 10px;
     padding: 15px;
-    min-width:300px;
+    min-width: 300px;
+    opacity: 100;
+    background-color: $light-gray;
+}
 
+
+
+.todocard {
+    @extend %basic-card;
 
     &__element {
         @include centered-content;
-        height: 40px;
-        width: 40px;
+        padding: 5px;
+        border-radius: 5px;
         background-color: $medium-gray;
-        border-radius: 50%;
+
+    }
+
+    &__drag-icon {
+        display: block;
+        max-width: 15px;
+
+    }
+
+    &__drag-icon:hover {
+        visibility: hidden;
     }
 
     &>input[type=text] {
-        border:none;
+        border: none;
         outline: none;
-        
-        &:focus{
+
+        &:focus {
             outline: none;
-            border-bottom:1px solid blue;
-            
+            border-bottom: 1px solid blue;
         }
+    }
+
+    &__completed {
+        @include shadow;
+        display: flex;
+        align-items: center;
+        align-content: space-between;
+        justify-content: space-between;
+        gap: 5px;
+        height: auto;
+        border: 1px solid gray;
+        border-radius: $border-radius-wide;
+        margin: 10px;
+        padding: 15px;
+        min-width: 300px;
+        opacity: 100;
+        background-color: white;
+    }
+
+    &__onDrag {
+        @extend %basic-card;
+        @include inset-shadow;
+        background-color: $beige;
+        z-index: 999999;
+
     }
 
 }

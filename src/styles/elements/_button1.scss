@@ -7,7 +7,7 @@ button {
     letter-spacing: 2.5px;
     font-weight: 500;
     color: $black;
-    background-color: $red;
+    background-color: #23c483;
     border: none;
     border-radius: $border-radius-narrow;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
@@ -16,8 +16,8 @@ button {
     outline: none;
 
     &:hover {
-        background-color: #23c483;
-        box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+        background-color: $red;
+        box-shadow: 0px 15px 20px #CC3300;
         color: #fff;
         transform: translateY(-2px);
     }

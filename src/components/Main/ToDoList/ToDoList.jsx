@@ -1,6 +1,5 @@
-import React, { useRef, useState } from "react";
+import React, { useRef} from "react";
 import { useSelector, useDispatch } from 'react-redux';
-import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import { v4 as uuidv4 } from 'uuid';
 import ToDoCard from '../ToDoCard/ToDoCard';
 import { addTask, deleteTask, deleteAllTasks } from '../../../redux/slices/taskListSlice';
@@ -12,9 +11,6 @@ const ToDoList = () => {
   const dispatch = useDispatch();
   const newTaskInput = useRef(null);
 
-  /* const defaultList = taskList;
-  const [itemList, setItemList] = useState(defaultList); */
-
   const addItem = (event) => {
     event.preventDefault();
     dispatch(addTask(newTaskInput.current.value));
@@ -24,7 +20,6 @@ const ToDoList = () => {
   const deleteCard = (i) => { dispatch(deleteTask(i)) };
   const deleteAllCards = () => { dispatch(deleteAllTasks()) };
   const printCards = () => taskList.map((task, i) => <ToDoCard key={uuidv4()} data={task} index={i} delete={() => deleteCard(i)} />);
-
 
   return <section className="todolist">
     <h2>To do list</h2>
@@ -36,8 +31,7 @@ const ToDoList = () => {
     <section id="list" className="todolist__container">
      
           {printCards()}
-         
-     
+          
     </section>
     {taskList.length > 1 ? <button className="button1" onClick={deleteAllCards}>Delete List</button> : ""}
 

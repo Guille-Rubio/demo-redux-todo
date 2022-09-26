@@ -1,6 +1,5 @@
 import React, { useState, useRef } from "react";
-import Draggable from "react-draggable";
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux';
 import { editTask, toggleTaskCompleted } from "../../../redux/slices/taskListSlice";
 import dragIcon from '../../../assets/icons/drag.png';
 
@@ -10,7 +9,6 @@ const ToDoCard = (props) => {
   const taskText = useSelector((state) => state.taskList.tasks[props.index].title);
   const completed = useSelector((state) => state.taskList.tasks[props.index].completed);
 
-  const [cardStyle, setCardStyle] = useState("");
   const [taskInput, setTaskInput] = useState(taskText);
 
   const nodeRef = useRef(null);
@@ -27,7 +25,7 @@ const ToDoCard = (props) => {
   };
 
 
-  return <article ref={nodeRef} className={`todocard${completed ? "__completed" : ""}${cardStyle}`}>
+  return <article ref={nodeRef} className={`todocard${completed ? "__completed" : ""}`}>
     <div className="todocard__element" ><img src={dragIcon} alt="drag icon" className="todocard__drag-icon" /></div>
     <input type="checkbox" defaultChecked={completed} onClick={toggleCompletion} />
     <input type="text" value={taskInput} onChange={updateTask} onBlur={() => dispatch(editTask({ index: props.index, updatedTask: taskInput }))}></input>

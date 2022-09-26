@@ -27,15 +27,13 @@ const ToDoCard = (props) => {
   };
 
 
-  return <Draggable>
-  
-    <article ref={nodeRef} className={`todocard${completed ? "__completed" : ""}${cardStyle}`}>
-      <div className="todocard__element" ><img src={dragIcon} alt="drag icon" className="todocard__drag-icon" /></div>
-      <input type="checkbox" defaultChecked={completed} onClick={toggleCompletion} />
-      <input type="text" value={taskInput} onChange={updateTask} onBlur={() => dispatch(editTask({ index: props.index, updatedTask: taskInput }))}></input>
-      <button className="button1" onClick={props.delete}>X</button>
-    </article>
-  </Draggable >;
+  return <article ref={nodeRef} className={`todocard${completed ? "__completed" : ""}${cardStyle}`}>
+    <div className="todocard__element" ><img src={dragIcon} alt="drag icon" className="todocard__drag-icon" /></div>
+    <input type="checkbox" defaultChecked={completed} onClick={toggleCompletion} />
+    <input type="text" value={taskInput} onChange={updateTask} onBlur={() => dispatch(editTask({ index: props.index, updatedTask: taskInput }))}></input>
+    <button className="button1" onClick={props.delete}>X</button>
+  </article>
+
 };
 
 

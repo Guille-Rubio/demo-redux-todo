@@ -1,13 +1,13 @@
-import { createSlice } from "@reduxjs/toolkit";
+/* import { createSlice } from "@reduxjs/toolkit"; */
 
 
 
 
-const initialState = {
+/* const initialState = {
     tasks: [],
-};
+}; */
 
-const taskListSlice = createSlice({
+/* const taskListSlice = createSlice({
     name: 'tasklist',
     initialState,
     reducers: {
@@ -52,7 +52,7 @@ const taskListSlice = createSlice({
         },
 
     }
-});
+}); */
 
-export const { addTask, editTask, deleteTask, deleteAllTasks, toggleTaskCompleted } = taskListSlice.actions;
-export default taskListSlice.reducer;
+/* export const { addTask, editTask, deleteTask, deleteAllTasks, toggleTaskCompleted } = taskListSlice.actions; */
+/* export default taskListSlice.reducer; */

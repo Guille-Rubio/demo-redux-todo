@@ -5,16 +5,17 @@ import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import PWAPrompt from 'react-ios-pwa-prompt';
 import reportWebVitals from './reportWebVitals';
-import { store } from './redux/store';
-import { Provider } from 'react-redux';
+//import { store } from './redux/store';
+//import { Provider } from 'react-redux';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 
   <React.StrictMode>
-    <Provider store={store}>
+   {/*  <Provider store={store}> */}
       <App />
-    </Provider> <PWAPrompt copyTitle="React App" />{/* //CHECK WHETHER THIS GOES WITHIN THE PROVIDER */}
+   {/*  </Provider>  */}
+    <PWAPrompt copyTitle="React App" />
   </React.StrictMode>
 );
 

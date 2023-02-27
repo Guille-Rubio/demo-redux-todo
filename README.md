@@ -28,15 +28,10 @@ Redux
  Contains the state of the app and the reducers divided in slices. Single source of truth principle. 
 
  ```
+//store.js
 import { configureStore } from '@reduxjs/toolkit';
 
-export const store = configureStore({
-    reducer:{
-        taskList:taskListSlice,
-        //otherState:OtherStateSlice,
-        //...
-    }
-}) 
+export const store = configureStore() 
 ```
 
 ## Provide Store
@@ -44,6 +39,7 @@ export const store = configureStore({
 In your src/index.js, import react-redux and provide the store
 
 ```
+//src/index.js
 //... other imports
 import { store } from './redux/store';
 import { Provider } from 'react-redux';
@@ -60,8 +56,6 @@ root.render(
 
 ```
 
-
-
 ## Add reducers slice
 In taskListSlice.js, pass the following arguments to createSlice: 
 1. Give a name to your slice.
@@ -71,6 +65,7 @@ In taskListSlice.js, pass the following arguments to createSlice:
     Each reducer always takes the previous state as first argument and the action optionally as the second.
 
 ```
+//src/redux/slices/taskListSlice.js
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
@@ -107,6 +102,7 @@ export default taskListSlice.reducer;
 
 In your store.js, add your slice, it shoud look like this
 ```
+//src/redux/store.js
 import { configureStore } from '@reduxjs/toolkit';
 import taskListSlice from './slices/taskListSlice';
 

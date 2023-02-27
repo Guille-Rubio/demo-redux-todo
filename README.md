@@ -5,8 +5,9 @@ You'll learn to:
 1. Install dependencies
 2. Structure Files
 3. Create Store
-4. Add reducer slice
-5. Use redux in your view/component
+4. Provide Store
+5. Add reducer slice
+6. Use redux in your view/component
 
 
 ## Install dependencies
@@ -37,6 +38,28 @@ export const store = configureStore({
     }
 }) 
 ```
+
+## Provide Store
+
+In your src/index.js, import react-redux and provide the store
+
+```
+//... other imports
+import { store } from './redux/store';
+import { Provider } from 'react-redux';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+
+    <Provider store={store}>
+      <App />
+   </Provider> 
+);
+
+//...
+
+```
+
 
 
 ## Add reducers slice
@@ -96,7 +119,7 @@ export const store = configureStore({
 
 ```
 
-## Add redux to yor view
+## Add redux to your view
 
 Your view/component will need to: 
 - Read your redux state (subscribe)
@@ -105,7 +128,7 @@ Your view/component will need to:
 ### Subscribe
 
 ```
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 const ToDoList = () => {
 
@@ -147,11 +170,7 @@ const ToDoList =()=>{
 ```
 
 In your event handler, dispatch your reducer with your action. To dispatch the action you only need to pass the payload as argument.
-```
-
-```
 
 
 
-State is read-only principle
-Changes are made with pure functions
+
